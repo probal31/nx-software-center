@@ -5,7 +5,6 @@ import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
-import org.mauikit.imagetools 1.0 as IT
 
 import QtGraphicalEffects 1.0
 
@@ -502,7 +501,7 @@ Maui.Page
             id: _aniX
             running: false
             from: _aniImg.x; to: (_swipeView.width/2)
-            duration: Kirigami.Units.longDuration * 15
+            duration: Kirigami.Units.longDuration * 5
             loops: 1
             easing.type: Easing.OutQuad
         }
@@ -513,7 +512,7 @@ Maui.Page
             running: false
             easing.type: Easing.OutQuad
             from: _aniImg.y; to: 0
-            duration: Kirigami.Units.longDuration * 15
+            duration: Kirigami.Units.longDuration * 5
             loops: 1
         }
 
@@ -543,7 +542,7 @@ Maui.Page
         height: control.height
         width: control.width
 
-        IT.ImageViewer
+        Maui.ImageViewer
         {
             id: _imageViewer
 
@@ -559,7 +558,6 @@ Maui.Page
             onClicked: _imageViewerDialog.close()
         }
     }
-
 
     function goToProgressView()
     {
